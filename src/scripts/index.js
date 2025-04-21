@@ -1,11 +1,7 @@
 import "../pages/index.css";
 import { initialCards } from "./cards.js";
 import { createCard } from "../components/card.js";
-import {
-  openModal,
-  closeModal,
-  closeModalByClick,
-} from "../components/modal.js";
+import { openModal, closeModal, closeModalByClick, } from "../components/modal.js";
 
 const pageContent = document.querySelector(".page__content");
 const content = pageContent.querySelector(".content");
