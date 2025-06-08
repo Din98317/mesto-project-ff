@@ -17,18 +17,12 @@ const hideInputError = (formElement, inputElement, config) => {
 };
 
 const isValid = (formElement, inputElement, config) => {
-  if (inputElement.validity.valueMissing) {
-    inputElement.setCustomValidity("Вы пропустили это поле.");
-  } else if (inputElement.validity.patternMismatch) {
+  if (inputElement.validity.patternMismatch) {
     inputElement.setCustomValidity(inputElement.dataset.errorMessage);
-  } else if (
-    inputElement.validity.typeMismatch &&
-    inputElement.type === "url"
-  ) {
-    inputElement.setCustomValidity("Введите адрес сайта");
   } else {
     inputElement.setCustomValidity("");
   }
+
   if (!inputElement.validity.valid) {
     showInputError(
       formElement,
@@ -40,7 +34,6 @@ const isValid = (formElement, inputElement, config) => {
     hideInputError(formElement, inputElement, config);
   }
 };
-
 const hasInvalidInput = (inputList) => {
   return inputList.some((inputElement) => {
     return !inputElement.validity.valid;

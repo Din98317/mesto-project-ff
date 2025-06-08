@@ -121,12 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
           profileAvatar.style.backgroundImage = `url(${userData.avatar})`;
         }
 
-        if (profileTitle) profileTitle.textContent = userData.name;
-        if (profileAbout) profileAbout.textContent = userData.about;
-        if (profileAvatar) {
-          profileAvatar.style.backgroundImage = `url(${userData.avatar})`;
-        }
-
         if (cardsContainer) {
           cards.forEach((card) => {
             const cardElement = createCard(

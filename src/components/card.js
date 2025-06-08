@@ -36,16 +36,17 @@ function createCard(
 
   if (cardData.owner._id !== userId) {
     deleteButton.remove();
+  } else {
+    deleteButton.addEventListener("click", () => handleDeleteClick(cardData._id));
   }
+  
 
   if (cardData.likes.some((like) => like._id === userId)) {
     likeButton.classList.add("card__like-button_is-active");
   }
 
   cardPhoto.addEventListener("click", () => handleImageClick(cardData));
-  deleteButton.addEventListener("click", () => handleDeleteClick(cardData._id));
   likeButton.addEventListener("click", () => handleLikeClick(cardData._id));
-
   return cardElement;
 }
 
